@@ -1,0 +1,52 @@
+<!--Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+
+* Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
+
+* Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
+
+* Your app will store every burger in a database, whether devoured or not.
+
+* [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).-->
+
+<h1>Eat Da Burger!</h1>
+
+<h2>Enter a burger you want to eat and click the "Submit" Button</h2>
+
+<!--EDIT BELOW-->
+
+<h2>Devoured Burgers!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers not eaten yet!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <!--what is ca?-->
+		<label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not eaten yet
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
