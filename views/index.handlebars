@@ -16,26 +16,15 @@
 
 <!--EDITED BELOW-->
 	<!--Option 1 CATS example start
-		<h2>Devoured Burgers!</h2>
+	<div>
+	<!--cycle through burgers in database-->
+  			{{#each burger}}
+    		{{#unless this.devoured}}
 
-			<ul>
-  			{{#each burgers}}
-    		{{#unless devoured}}
-      		{{> burgers/burger-block devoured=true}}
+					
     		{{/unless}}
   			{{/each}}
-			</ul>
-
-
-		<h2>Burgers not eaten yet!</h2>
-
-			<ul>
-  			{{#each burgers}}
-    		{{#if devoured}}
-      		{{> burgers/burger-block devoured=false}}
-    		{{/if}}
-  			{{/each}}
-			</ul>
+	</div>
 
 		<form class="create-form">
 
@@ -55,7 +44,7 @@
 	</form>
 	Option 1 example end-->
 
-
+<!--Add data to burgers_db-->
 
 	<!--Option 2 QUOTES Example starts
 	<h1>Quotes App</h1>
