@@ -1,0 +1,24 @@
+body {
+
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 20px;
+}
+
+h1 {
+	font-size: 60px;
+	color: darkgreen;
+  text-align: center;
+}
+
+h2 {
+	font-size: 40px;
+	color: darkred;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+	color: darkgrey;
+  text-align: center;
+}

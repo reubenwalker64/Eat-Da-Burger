@@ -7,46 +7,49 @@
 * Your app will store every burger in a database, whether devoured or not.
 
 * [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).-->
+<div class="container">
+  <div class="row">
+		<h1>Eat Da Burger!</h1>
+	</div>
 
-<h1>Eat Da Burger!</h1>
-
-<h2>Enter a burger you want to eat and click the "Submit" Button</h2>
+		<p>Enter a burger you want to eat and click the "Submit" Button</p>
 
 <!--EDIT BELOW-->
 
-<h2>Devoured Burgers!</h2>
+		<h2>Devoured Burgers!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+			<ul>
+  			{{#each burgers}}
+    		{{#unless devoured}}
+      		{{> burgers/burger-block devoured=true}}
+    		{{/unless}}
+  			{{/each}}
+			</ul>
 
-<h2>Burgers not eaten yet!</h2>
+		<h2>Burgers not eaten yet!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+			<ul>
+  			{{#each burgers}}
+    		{{#if devoured}}
+      		{{> burgers/burger-block devoured=false}}
+    		{{/if}}
+  			{{/each}}
+			</ul>
 
-<form class="create-form">
+		<form class="create-form">
 
-  <div class="form-group">
-    <!--what is ca?-->
-		<label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
+  		<div class="form-group">
+    		<!--what is ca?-->
+					<label for="ca">Burger Name:</label>
+    		<input type="text" id="ca" name="name">
+  		</div>
 
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not eaten yet
-  </div>
+  		<div class="form-group">
+    		<label for="devoured">Devoured?</label><br>
+    		<input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    		<input type="radio" name="devoured" value="0"> Not eaten yet
+  		</div>
 
-  <button type="submit">Submit</button>
-</form>
+  	<button type="submit">Submit</button>
+	</form>
+</div>
