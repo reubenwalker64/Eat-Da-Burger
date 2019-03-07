@@ -14,8 +14,8 @@
 
 		<p>Enter a burger you want to eat and click the "Submit" Button</p>
 
-<!--EDIT BELOW-->
-
+<!--EDITED BELOW-->
+	<!--Option 1 CATS example start
 		<h2>Devoured Burgers!</h2>
 
 			<ul>
@@ -25,6 +25,7 @@
     		{{/unless}}
   			{{/each}}
 			</ul>
+
 
 		<h2>Burgers not eaten yet!</h2>
 
@@ -38,8 +39,8 @@
 
 		<form class="create-form">
 
-  		<div class="form-group">
-    		<!--what is ca?-->
+  		<div class="form-group"> -->
+    		<!--what is ca?--><!--
 					<label for="ca">Burger Name:</label>
     		<input type="text" id="ca" name="name">
   		</div>
@@ -52,4 +53,139 @@
 
   	<button type="submit">Submit</button>
 	</form>
+	Option 1 example end-->
+
+
+
+	<!--Option 2 QUOTES Example starts
+	<h1>Quotes App</h1>
+
+	<p>Manage quotes with this app</p>
+
+	<!-- Pass in data from server.js --><!--
+	<ul>
+	  {{#each quotes}}
+	  	<li>
+	  		<p><span class="label">ID:</span> {{this.id}}</p>
+	      <p><span class="label">Quote:</span> {{this.quote}}</p>
+	      <p><span class="label">Author:</span> {{this.author}}</p>
+
+	      <button data-id="{{this.id}}" class="delquote">Delete</button>
+
+	      <a href="/{{this.id}}">Update this quote</a>
+	  	</li>
+	  {{/each}}
+	</ul>
+
+	<h2>Add a Quote</h2>
+
+	<form class="create-form">
+
+	  <div class="form-group">
+	    <label for="auth">Author:</label>
+	    <input type="text" id="auth" name="author">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="quo">Quote:</label>
+	    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+	  </div>
+
+	  <button type="submit">Add Quote</button>
+	</form>
+Option 2 example end-->
+
+
+
+<!--Option 3 MOVIES example start
+<h1>Movies To Watch</h1>
+
+<ul>
+{{#each movies}}
+	<li>
+		<p>
+			{{this.id}}. {{this.movie}}
+
+			<button data-movieid="{{this.id}}" class="delmovie">Delete</button>
+		</p>
+	</li>
+{{/each}}
+</ul>
+
+<h2>Add a Movie to Watch</h2>
+<form id="addmovie" class="button-size">
+<textarea type="text" name="movie"></textarea>
+<button type="submit">Save Movie!</button>
+</form>
+
+<h2>Update a Movie</h2>
+<form id="updatemovie" class="button-size">
+<input type="text" name="id" placeholder="id">
+<textarea type="text" name="movie" placeholder="what do you want to update this movie title to?"></textarea>
+<button type="submit">Update Movie!</button>
+</form>
+
+<script type="text/javascript">
+$(".delmovie").on("click", function(event) {
+	var id = $(this).data("movieid");
+
+	// Send the DELETE request.
+	$.ajax("/movies/" + id, {
+		type: "DELETE"
+	}).then(
+		function() {
+			console.log("deleted id ", id);
+			// Reload the page to get the updated list
+			location.reload();
+		}
+	);
+});
+
+$("#addmovie").on("submit", function(event) {
+	// Make sure to preventDefault on a submit event.
+	event.preventDefault();
+
+	var newMovie = {
+		movie: $("#addmovie [name=movie]").val().trim()
+	};
+
+	// Send the POST request.
+	$.ajax("/movies", {
+		type: "POST",
+		data: newMovie
+	}).then(
+		function() {
+			console.log("added new movie");
+			// Reload the page to get the updated list
+			location.reload();
+		}
+	);
+});
+
+$("#updatemovie").on("submit", function(event) {
+	// Make sure to preventDefault on a submit event.
+	event.preventDefault();
+
+	var id = $("[name=id]").val().trim();
+
+	var updatedMovie = {
+		movie: $("#updatemovie [name=movie]").val().trim()
+	};
+
+	// Send the PUT request.
+	$.ajax("/movies/" + id, {
+		type: "PUT",
+		data: updatedMovie
+	}).then(
+		function() {
+			console.log("updated id ", id);
+			// Reload the page to get the updated list
+			location.reload();
+		}
+	);
+});
+</script>
+
+Option 3 example ends-->
+
 </div>
