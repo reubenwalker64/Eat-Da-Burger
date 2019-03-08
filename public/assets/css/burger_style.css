@@ -1,8 +1,14 @@
 body {
-
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 20px;
+}
+
+.header {
+	text-align: center;
+}
+.row {
+	text-align: center;
 }
 
 h1 {
@@ -22,3 +28,28 @@ p {
 	color: darkgrey;
   text-align: center;
 }
+
+div#burgerLoop {
+    margin-top: 25px;
+}
+
+
+button.btn.btn-success {
+    padding-top: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+	}
+
+
+pre {
+	  display: block;
+	  margin-top: 0;
+	  margin-bottom: 1rem;
+	  font-size: 20px;
+	  color: darkgreen;
+	}
+
+button #textEnterButton {
+
+	}

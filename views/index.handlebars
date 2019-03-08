@@ -8,50 +8,54 @@
 
 * [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).-->
 <div class="container">
-  <div class="row">
-		<h1>Eat Da Burger!</h1>
-	</div>
+  <div class="header">
 
+		<div class="row"><img src="assets/img/burger.png" alt="Burger Icon"></div>
+		<div class="row"><h1>Eat Da Burger!</h1></div>
+	</div>
+		<br>
 		<p>Enter a burger you want to eat and click the "Submit" Button</p>
 
-<!--EDITED BELOW-->
-	<!--Option 1 CATS example start
-	<div>
+	<div id="burgerLoop">
 	<!--cycle through burgers in database-->
   			{{#each burger}}
     		{{#unless this.devoured}}
+				<div>
+				<pre> {{this.id}}.{{this.name}}</pre>
+				</div>
 
-					
-    		{{/unless}}
-  			{{/each}}
+<!-- devourer burgers? -->
+	<div>
+			<form method="POST" action=/burgers/update?_method=PUT">
+				<input type="hidden" name="id" type="text" value={{this.id}}>
+				<button type="submit" class= "btn btn-success">Devourer it</button>
+	</div>
+	{{/unless}}
+	{{/each}}
 	</div>
 
-		<form class="create-form">
+</div> <!-- container closing div -->
 
-  		<div class="form-group"> -->
-    		<!--what is ca?--><!--
-					<label for="ca">Burger Name:</label>
-    		<input type="text" id="ca" name="name">
-  		</div>
+<!-- Add data to burgers_db -->
 
-  		<div class="form-group">
-    		<label for="devoured">Devoured?</label><br>
-    		<input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    		<input type="radio" name="devoured" value="0"> Not eaten yet
-  		</div>
+<div class="container">
+	<div class="row">
+		<form action="/burgers/create" method="POST">
+              <input type="text" name="name" class="form-control" value="" id="enter_text">
+							<br>
+              <button type="submit" class="btn btn-warning" id="textEnterButton">SUBMIT</button>
+    </form>
 
-  	<button type="submit">Submit</button>
-	</form>
-	Option 1 example end-->
+	</div>
+</div>
 
-<!--Add data to burgers_db-->
+<!-- add code to add burger -->
 
-	<!--Option 2 QUOTES Example starts
-	<h1>Quotes App</h1>
+<!-- Option 2 QUOTES Example starts
 
-	<p>Manage quotes with this app</p>
+<!-- Pass in data from server.js -->
 
-	<!-- Pass in data from server.js --><!--
+	<!--
 	<ul>
 	  {{#each quotes}}
 	  	<li>
@@ -82,7 +86,7 @@
 
 	  <button type="submit">Add Quote</button>
 	</form>
-Option 2 example end-->
+Option 2 example end -->
 
 
 
@@ -176,5 +180,3 @@ $("#updatemovie").on("submit", function(event) {
 </script>
 
 Option 3 example ends-->
-
-</div>
