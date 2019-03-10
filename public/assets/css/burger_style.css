@@ -5,10 +5,10 @@ body {
 }
 
 .header {
-	text-align: center;
+	justify-content: center !important;
 }
 .row {
-	text-align: center;
+	text-align: center !important;
 }
 
 h1 {
@@ -33,6 +33,9 @@ div#burgerLoop {
     margin-top: 25px;
 }
 
+.formButton {
+	margin-top: 200 px !important;
+}
 
 button.btn.btn-success {
     padding-top: 10px;
