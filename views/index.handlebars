@@ -10,8 +10,8 @@
 <div class="container">
   <div class="header">
 
-		<div class="row"><img src="assets/img/burger.png" alt="Burger Icon"></div>
-		<div class="row"><h1>Eat Da Burger!</h1></div>
+		<div class="headerRow"><img src="assets/img/burger.png" alt="Burger Icon"></div>
+		<div class="headerRow"><h1>Eat Da Burger!</h1></div>
 	</div>
 		<br>
 		<p>Enter a burger you want to eat and click the "Submit" Button</p>
@@ -24,11 +24,12 @@
 				<pre> {{this.id}}.{{this.name}}</pre>
 				</div>
 
-<!-- devourer burgers? -->
+<!-- devour burgers -->
 	<div>
 			<form method="POST" action=/burgers/update?_method=PUT">
 				<input type="hidden" name="id" type="text" value={{this.id}}>
-				<button type="submit" class= "btn btn-success">Devourer it</button>
+				<button type="submit" class= "btn btn-success">Devour it</button>
+			</form>
 	</div>
 	{{/unless}}
 	{{/each}}
