@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-	font-size: 60px;
+	font-size: 50px;
 	color: darkgreen;
   text-align: center;
 }
@@ -44,7 +44,6 @@ button.btn.btn-success {
     margin-bottom: 30px;
 	}
 
-
 pre {
 	  display: block;
 	  margin-top: 0;
@@ -53,6 +52,9 @@ pre {
 	  color: darkgreen;
 	}
 
-button #textEnterButton {
-
+	#textEnterButton {
+		color: white;
+		width: 125px;
+		margin: auto;
+		text-align: center;
 	}

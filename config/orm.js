@@ -11,7 +11,7 @@
    * Export the ORM object in `module.exports`.*/
 
 // Import MySQL connection.
-var connection = require("../connection.js");
+var connection = require("./connection.js");
 
 // Object for all our SQL statement functions.
 
@@ -56,9 +56,9 @@ var orm = {
       }
 
       cb(result);
-    });
+    }
   //WHY RED??? }  
-  };
+  } 
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burgers.js).
 module.exports = orm;

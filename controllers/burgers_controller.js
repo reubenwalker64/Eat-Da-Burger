@@ -19,14 +19,20 @@ router.get("/", function(req, res) {
 });
 //EDIT BELOW ???
 router.post("/", function(req, res) {
-  burger.create(req.body.name, function(result){
+  console.log(req.body.name);
+
+  if(req.body.name !== "") {
+  burger.create(req.body.name, function(){
     res.redirect("/");
-  })
+  });
+}
 });
+
 //EDIT BELOW ???
 router.put("/:id", function(req, res) {
+  console.log(req.params.id);
 
-  burger.update(req.body.id, function(result){
+  burger.update(req.params.id, function(result){
     console.log(result);
     res.redirect('/');
   });

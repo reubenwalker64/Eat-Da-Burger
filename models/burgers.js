@@ -10,12 +10,12 @@ var burger = {
   // The variables cols and vals are arrays.
   //PROBLEM HERE???
   create: function(name, cb) {
-    orm.create("burgers", name, cb function(res) {
+    orm.create("burgers", name, cb, function(res) {
       cb(res);
     });
   },
   update: function(id, cb) {
-    orm.update("burgers", id, cb function(res) {
+    orm.update("burgers", id, cb, function(res) {
       cb(res);
     });
   },
