@@ -58,3 +58,27 @@ pre {
 		margin: auto;
 		text-align: center;
 	}
+
+	#textEnter {
+		
+		margin: auto;
+		text-align: center;
+	}
+
+	.addburger {
+		color: white;
+		width: 125px;
+		margin: auto;
+		text-align: center;
+	}
+
+	ol {
+		text-align: center;
+	}
+
+	.submit {
+		color: white;
+		width: 125px;
+		margin: auto;
+		text-align: center;
+	}

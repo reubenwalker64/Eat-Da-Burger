@@ -14,6 +14,7 @@
 		<div class="headerRow"><h1>Eat Da Burger!</h1></div>
 	</div>
 		<br>
+		<p>Temp Add Burger option1</p>
 		<p>Enter a burger you want to eat and click the "Submit" Button</p>
 
 	<div id="burgerLoop">
@@ -42,7 +43,7 @@
 <div class="container">
 	<div class="formButton">
 		<form action="/burgers/create" method="POST">
-              <input type="text" name="name" class="form-control" value="" id="enter_text">
+              <input type="text" name="name" class="form-control" value="" id="enterText">
 							<br>
               <button type="submit" class="btn btn-warning" id="textEnterButton">SUBMIT</button>
     </form>
@@ -50,81 +51,42 @@
 	</div>
 </div>
 
-<!-- add code to add burger -->
-
-<!-- Option 2 QUOTES Example starts
-
 <!-- Pass in data from server.js -->
 
-	<!--
-	<ul>
-	  {{#each quotes}}
-	  	<li>
-	  		<p><span class="label">ID:</span> {{this.id}}</p>
-	      <p><span class="label">Quote:</span> {{this.quote}}</p>
-	      <p><span class="label">Author:</span> {{this.author}}</p>
-
-	      <button data-id="{{this.id}}" class="delquote">Delete</button>
-
-	      <a href="/{{this.id}}">Update this quote</a>
-	  	</li>
-	  {{/each}}
-	</ul>
-
-	<h2>Add a Quote</h2>
-
-	<form class="create-form">
-
-	  <div class="form-group">
-	    <label for="auth">Author:</label>
-	    <input type="text" id="auth" name="author">
-	  </div>
-
-	  <div class="form-group">
-	    <label for="quo">Quote:</label>
-	    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
-	  </div>
-
-	  <button type="submit">Add Quote</button>
-	</form>
-Option 2 example end -->
-
-
-
-<!--Option 3 MOVIES example start
-<h1>Movies To Watch</h1>
-
-<ul>
-{{#each movies}}
-	<li>
+<h2>Burgers to Eat</h2>
+<!--fix css to loose center and br if using below-->
+<br>
+{{#each burgers}}
+	
 		<p>
-			{{this.id}}. {{this.movie}}
+			{{this.id}}. {{this.burger}}
 
-			<button data-movieid="{{this.id}}" class="delmovie">Delete</button>
+			<button data-burgerid="{{this.id}}" class="delBurger">Delete</button>
 		</p>
-	</li>
+	
 {{/each}}
-</ul>
 
-<h2>Add a Movie to Watch</h2>
-<form id="addmovie" class="button-size">
-<textarea type="text" name="movie"></textarea>
-<button type="submit">Save Movie!</button>
+<!-- add code to add burger ???-->
+<!--fix css to loose center and br if using below-->
+<center>
+<br>
+<p> Temp Add Burger option2</p>
+<h2>Add a Burger to Eat</h2>
+<br>
+<form id="addburger" class="button-size">
+<input type="text" name="burger"></textarea>
+<br><br>
+<button type="submit" class="btn btn-warning" id="textEnterButton">SUBMIT</button>
 </form>
-
-<h2>Update a Movie</h2>
-<form id="updatemovie" class="button-size">
-<input type="text" name="id" placeholder="id">
-<textarea type="text" name="movie" placeholder="what do you want to update this movie title to?"></textarea>
-<button type="submit">Update Movie!</button>
-</form>
+<br>
+</center>
 
 <script type="text/javascript">
-$(".delmovie").on("click", function(event) {
-	var id = $(this).data("movieid");
+$(".delburger").on("click", function(event) {
+	var id = $(this).data("burgerid");
 
 	// Send the DELETE request.
-	$.ajax("/movies/" + id, {
+	$.ajax("/burgers/" + id, {
 		type: "DELETE"
 	}).then(
 		function() {
@@ -135,41 +97,41 @@ $(".delmovie").on("click", function(event) {
 	);
 });
 
-$("#addmovie").on("submit", function(event) {
+$("#addburger").on("submit", function(event) {
 	// Make sure to preventDefault on a submit event.
 	event.preventDefault();
 
-	var newMovie = {
-		movie: $("#addmovie [name=movie]").val().trim()
+	var newBurger = {
+		burger: $("#addburger [name=burger]").val().trim()
 	};
 
 	// Send the POST request.
-	$.ajax("/movies", {
+	$.ajax("/burgers", {
 		type: "POST",
-		data: newMovie
+		data: newBurger
 	}).then(
 		function() {
-			console.log("added new movie");
+			console.log("added new burger");
 			// Reload the page to get the updated list
 			location.reload();
 		}
 	);
 });
 
-$("#updatemovie").on("submit", function(event) {
+$("#updateburger").on("submit", function(event) {
 	// Make sure to preventDefault on a submit event.
 	event.preventDefault();
 
 	var id = $("[name=id]").val().trim();
 
-	var updatedMovie = {
-		movie: $("#updatemovie [name=movie]").val().trim()
+	var updatedBurger = {
+		movie: $("#updateburger [name=burger]").val().trim()
 	};
 
 	// Send the PUT request.
-	$.ajax("/movies/" + id, {
+	$.ajax("/burgers/" + id, {
 		type: "PUT",
-		data: updatedMovie
+		data: updatedBurger
 	}).then(
 		function() {
 			console.log("updated id ", id);
@@ -180,4 +142,3 @@ $("#updatemovie").on("submit", function(event) {
 });
 </script>
 
-Option 3 example ends-->
