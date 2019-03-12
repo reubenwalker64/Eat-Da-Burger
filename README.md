@@ -27,7 +27,7 @@ When trying to connect remotely to your Heroku database on an open network such 
 ### Submission on BCS
 
 * [GitHub repository](https://github.com/reubenwalker64/Eat-Da-Burger).
-* [Heroku Deployment](https://???).
+* [Heroku Deployment](https://protected-ocean-97295.herokuapp.com/).
 * [Reuben's Portfolio](https://reubenwalker64.github.io/updated-portfolio/portfolio.html).
 
 * **This assignment must be deployed.** * Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
