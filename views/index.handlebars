@@ -13,19 +13,19 @@
 		<div class="headerRow"><img src="assets/img/burger.png" alt="Burger Icon"></div>
 		<div class="headerRow"><h1>Eat Da Burger!</h1></div>
 	</div>
-		<br>
+		<!--<br>
 		<p>Temp Add Burger option1</p>
-		<p>Enter a burger you want to eat and click the "Submit" Button</p>
-
-	<div id="burgerLoop">
-	<!--cycle through burgers in database-->
+		<p>Enter a burger you want to eat and click the "Submit" Button</p>-->
+	<!--option1
+	<div id="burgerLoop"> -->
+	<!--cycle through burgers in database
   			{{#each burger}}
     		{{#unless this.devoured}}
 				<div>
 				<pre> {{this.id}}.{{this.name}}</pre>
 				</div>
-
-<!-- devour burgers -->
+-->
+<!-- devour burgers 
 	<div>
 			<form method="POST" action=/burgers/update?_method=PUT">
 				<input type="hidden" name="id" type="text" value={{this.id}}>
@@ -36,9 +36,11 @@
 	{{/each}}
 	</div>
 
-</div> <!-- container closing div -->
+</div> 
+-->
+<!-- container closing div -->
 
-<!-- Add data to burgers_db -->
+<!-- Add data to burgers_db 
 
 <div class="container">
 	<div class="formButton">
@@ -50,9 +52,9 @@
 
 	</div>
 </div>
-
+-->
 <!-- Pass in data from server.js -->
-
+<hr>
 <h2>Burgers to Eat</h2>
 <!--fix css to loose center and br if using below-->
 <br>
@@ -66,11 +68,11 @@
 	
 {{/each}}
 
-<!-- add code to add burger ???-->
-<!--fix css to loose center and br if using below-->
+
+<!--fix css to lose center and br if using below-->
 <center>
 <br>
-<p> Temp Add Burger option2</p>
+<!--<p> Temp Add Burger option2</p>-->
 <h2>Add a Burger to Eat</h2>
 <br>
 <form id="addburger" class="button-size">

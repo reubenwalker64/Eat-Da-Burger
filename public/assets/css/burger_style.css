@@ -82,3 +82,13 @@ pre {
 		margin: auto;
 		text-align: center;
 	}
+
+	.delBurger {
+			color: white;
+			background-color: darkgreen;
+			border-radius: 5px;
+			width: 125px;
+			margin: auto;
+			text-align: center;
+			
+	}
