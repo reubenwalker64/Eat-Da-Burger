@@ -17,9 +17,9 @@ var connection = require("./connection.js");
 
 
 var orm = {
-  all: function(table, cb) {
+  all: function(tableInput, cb) {
     var queryString = "SELECT * FROM ??";
-    connection.query(queryString, [table], function(err, result) {
+    connection.query(queryString, [tableInput], function(err, result) {
       if (err) {
         throw err;
       }
@@ -29,11 +29,10 @@ var orm = {
 
 	//* `insertOne()` cols necessary???
 
-  create: function(table, cols, name, cb) {
-    var queryString = "INSERT INTO " + table;
+  create: function(tableInput, name, cb) {
 
     var queryString = "INSERT INTO ?? (??) VALUES (?)";
-		connection.query(queryString, [table, cols, name], function(err, res) {
+		connection.query(queryString, [tableInput, name], function(err, res) {
 
       if (err) {
         throw err;
@@ -46,8 +45,8 @@ var orm = {
 	//* `updateOne()` ???
   // An example of objColVals would be {name: panther, sleepy: true}
   //CHANGE objColVals, condition, 
-  update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+  update: function(tableInput, condition, cb) {
+    var queryString = "UPDATE " + tableInput;
 
     //???
 
@@ -57,7 +56,7 @@ var orm = {
 
       cb(result);
     }
-  //WHY RED??? }  
+  
   } 
 
 // Export the orm object for the model (burgers.js).
